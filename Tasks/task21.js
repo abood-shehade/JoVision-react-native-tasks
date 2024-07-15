@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
-import MyClassPage from '../Components/component_task20';
+import MyFunctionPage from '../Components/component_task21';
 
 const Task21 = () => {
   const [show_component, setshow_component] = useState(false);
@@ -11,7 +11,7 @@ const Task21 = () => {
   return (
     <View style={styles.container}>
       <Button title={show_component ? 'Hide' : 'Show'} onPress={toggle_hello} />
-      {show_component && <MyClassPage /> }
+      {show_component && <MyFunctionPage /> }
     </View>
   );
 };

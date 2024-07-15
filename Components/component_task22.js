@@ -11,7 +11,7 @@ const MyFunctionPage = (props) => {
     };
   }, []);
 
-  const handleTextChange = (text) => {
+  const handlechange = (text) => {
     setInputText(text);
     props.onChangeText(text); 
   };
@@ -22,7 +22,7 @@ const MyFunctionPage = (props) => {
       <TextInput
         style={{ height: 40, borderColor: 'black', borderWidth: 1, marginTop: 10, paddingHorizontal: 10 }}
         placeholder="Type something..."
-        onChangeText={handleTextChange}
+        onChangeText={handlechange}
         value={inputText}
       />
     </View>
