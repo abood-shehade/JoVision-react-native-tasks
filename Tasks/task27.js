@@ -3,12 +3,12 @@ import { View, Button, Alert, StyleSheet } from 'react-native';
 import DisplayImg from '../Components/component_task27';
 
 const Task27 = () => {
-  const [selectedImage, setSelectedImage] = useState(require('../Resources/img1.jpg'));
+  const [selectedImage, setSelectedImage] = useState(require('../Resources/img1.png'));
 
   const images = [
-    require('../Resources/img1.jpg'),
-    require('../Resources/img2.jpg'),
-    require('../Resources/img3.jpg')
+    require('../Resources/img1.png'),
+    require('../Resources/img2.png'),
+    require('../Resources/img3.png')
   ];
 
   const showAlert = () => {
