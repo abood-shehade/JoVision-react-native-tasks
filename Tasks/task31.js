@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { View, FlatList, Image, StyleSheet, Pressable, TextInput, Button, Alert } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons';
+import DuplicateIcon from '../Components/component_task31';
 
 const imgs = [
   require('../Resources/img1.png'),
@@ -15,7 +16,7 @@ const imgs = [
   require('../Resources/img10.png')
 ];
 
-const Task30 = () => {
+const Task31 = () => {
   const flatlist = useRef(null);
   const [images, setImages] = useState(imgs);
   const [inputValue, setInputValue] = useState('');
@@ -36,10 +37,17 @@ const Task30 = () => {
     setImages(updatedImages);
   };
 
+  const duplicate_image = (index) => {
+    const updatedImages = [...images];
+    updatedImages.splice(index + 1, 0, images[index]);
+    setImages(updatedImages);
+  };
+
   const showItem = ({ item, index }) => (
     <View style={styles.imageContainer}>
       <Image source={item} style={styles.image} />
-      <Pressable style={styles.icon} onPress={() => remove_image(index)}>
+      <DuplicateIcon onPress={() => duplicate_image(index)} />
+      <Pressable style={styles.removeIcon} onPress={() => remove_image(index)}>
         <Icon name="close-circle-sharp" size={30} color="#4F8EF7" />
       </Pressable>
     </View>
@@ -84,7 +92,7 @@ const styles = StyleSheet.create({
     height: 100,
     margin: 5,
   },
-  icon: {
+  removeIcon: {
     position: 'absolute',
     top: 5,
     right: 5,
@@ -104,4 +112,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Task30;
+export default Task31;
