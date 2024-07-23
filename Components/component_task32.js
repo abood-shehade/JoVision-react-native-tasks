@@ -8,7 +8,7 @@ const VideoPlayer = () => {
       <Video
         source={{ uri: 'https://www.w3schools.com/html/mov_bbb.mp4' }} 
         style={styles.video}
-        poster="https://assets.dryicons.com/uploads/icon/svg/6598/99fb44c0-d63b-4e47-af7c-2ef3a5805211.svg"
+        poster="https://www.w3schools.com/html/pic_trulli.jpg"
         posterResizeMode="cover"
         controls={true}
       />

@@ -15,6 +15,8 @@ import Task29 from "./Tasks/task29";
 import Task30 from "./Tasks/task30";
 import Task31 from "./Tasks/task31";
 import Task32 from "./Tasks/task32";
+import Task33 from "./Tasks/task33";
+import Task34 from "./Tasks/task34";
 
 
 const App = () => {
@@ -37,7 +39,9 @@ const App = () => {
    //<Task29></Task29>
    //<Task30></Task30>
    //<Task31></Task31>
-   <Task32></Task32>
+   //<Task32></Task32>
+   //<Task33></Task33>
+   <Task34></Task34>
   );
 };
 
