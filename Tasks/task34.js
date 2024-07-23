@@ -4,11 +4,9 @@ import useCurrentTime from '../Components/component_task34';
 
 const Task34 = () => {
   const currentTime = useCurrentTime();
-
   const format_time = (date) => {
     return date.toLocaleTimeString();
   };
-
   const format_date = (date) => {
     return date.toLocaleDateString();
   };
