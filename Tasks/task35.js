@@ -17,14 +17,13 @@ const Task35 = () => {
           const { name, age, country, timestamp } = JSON.parse(savedData);
           const now = new Date();
           const dataTimestamp = new Date(timestamp);
-          const timeDiff = (now - dataTimestamp) / 1000; // time difference in seconds
+          const timeDiff = (now - dataTimestamp) / 1000; 
 
           if (timeDiff < 60) {
             setName(name);
             setAge(age);
             setCountry(country);
           } else {
-            // Clear old data if it's more than a minute old
             await AsyncStorage.removeItem('userInfo');
           }
         }
@@ -66,7 +65,6 @@ const Task35 = () => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 
-const UserInputForm = ({ name, setName, age, setAge, country, setCountry }) => {
+const User_inp = ({ name, setName, age, setAge, country, setCountry }) => {
   return (
     <View style={styles.container}>
       <TextInput
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UserInputForm;
+export default User_inp;
