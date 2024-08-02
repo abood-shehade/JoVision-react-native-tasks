@@ -1,3 +1,5 @@
+import Screen1 from "./Components/project1_stage1_screen1";
+import Stage1 from "./Tasks/project_stage1";
 import Task16 from "./Tasks/task16";
 import Task17 from "./Tasks/task17";
 import Task18 from "./Tasks/task18";
@@ -57,7 +59,8 @@ const App = () => {
    //<Task39></Task39>
    //<Task40></Task40>
    //<Task41></Task41>
-   <Task42></Task42>
+   //<Task42></Task42>
+   <Stage1></Stage1>
   );
 };
 
