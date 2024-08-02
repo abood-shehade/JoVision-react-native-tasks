@@ -1,9 +1,8 @@
-// Screen1.js
 import React, { useState, useRef, useEffect } from 'react';
-import { View, Text, Button, Image, StyleSheet } from 'react-native';
+import { View, Text, Button, Image, StyleSheet, PermissionsAndroid } from 'react-native';
 import { Camera, useCameraDevice, useCameraDevices } from 'react-native-vision-camera';
 import { useIsFocused } from '@react-navigation/native';
-import { PermissionsAndroid } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Screen1 = () => {
   const [photo, setPhoto] = useState(null);
@@ -42,20 +41,30 @@ const Screen1 = () => {
   const takePhoto = async () => {
     if (camera.current && device && isCameraInitialized) {
       const photo = await camera.current.takePhoto({
-        qualityPrioritization: 'quality', // or 'speed'
+        qualityPrioritization: 'quality',
       });
       setPhoto(photo);
     }
   };
 
-  const savePhoto = () => {
-    console.log('Photo saved:', photo?.path);
-    setPhoto(null); // Return to camera
+  const savePhoto = async () => {
+    if (photo) {
+      try {
+        const storedPhotos = await AsyncStorage.getItem('photos');
+        const photosArray = storedPhotos ? JSON.parse(storedPhotos) : [];
+        photosArray.push(photo);
+        await AsyncStorage.setItem('photos', JSON.stringify(photosArray));
+        console.log('Photo saved:', photo.path);
+      } catch (error) {
+        console.error('Failed to save photo:', error);
+      }
+      setPhoto(null);
+    }
   };
 
   const discardPhoto = () => {
     console.log('Photo discarded:', photo?.path);
-    setPhoto(null); // Return to camera
+    setPhoto(null);
   };
 
   const onCameraInitialized = () => {
@@ -113,4 +122,5 @@ const styles = StyleSheet.create({
 });
 
 export default Screen1;
+
 
